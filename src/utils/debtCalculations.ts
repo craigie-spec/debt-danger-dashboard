@@ -1,4 +1,3 @@
-
 interface PaymentPlan {
   monthNumber: number;
   startingBalance: number;
@@ -50,7 +49,7 @@ export function calculateDebtScenarios(input: DebtInput): DebtScenario[] {
   // Calculate scenarios
   const scenarios: DebtScenario[] = [
     calculateMinimumPayments(input, "Minimum Payments", "#ea384c"),
-    calculateFixedPayment(input, firstMinPayment, "First Min Payment", "#FEF7CD"),
+    calculateFixedPayment(input, firstMinPayment, "First Min Payment", "#FFFF00"),
     calculateFixedPayment(input, input.fixedPaymentAmount, "Fixed Payment", "#1EAEDB")
   ];
   
