@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				danger: "#ea384c",       // Red for minimum repayments
+				warning: "#FEF7CD",      // Soft Yellow for first minimum payment
+				info: "#1EAEDB",         // Bright Blue for fixed payment
+				neutral: "#8E9196",      // Neutral Gray
+				dark: "#1A1F2C",         // Dark Purple
+				light: "#D6BCFA"         // Light Purple
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
