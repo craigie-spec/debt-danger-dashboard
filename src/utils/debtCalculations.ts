@@ -48,9 +48,9 @@ export function calculateDebtScenarios(input: DebtInput): DebtScenario[] {
   
   // Calculate scenarios
   const scenarios: DebtScenario[] = [
-    calculateMinimumPayments(input, "Minimum Payments", "#ea384c"),
-    calculateFixedPayment(input, firstMinPayment, "First Min Payment", "#FFFF00"),
-    calculateFixedPayment(input, input.fixedPaymentAmount, "Fixed Payment", "#1EAEDB")
+    calculateMinimumPayments(input, "Scenario One (Minimum payments only)", "#ea384c"),
+    calculateFixedPayment(input, firstMinPayment, "Scenario Two (Fixed Payment Equal to Initial Minimum)", "#FFFF00"),
+    calculateFixedPayment(input, input.fixedPaymentAmount, "Scenario Three (Custom Fixed Payment)", "#1EAEDB")
   ];
   
   return scenarios;

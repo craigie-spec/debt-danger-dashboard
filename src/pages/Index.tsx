@@ -57,11 +57,11 @@ const Index = () => {
           
           {hasCalculated && (
             <>
-              <DebtComparisonChart scenarios={scenarios} />
+              <DebtSummary scenarios={scenarios} />
               
               {!isPremium && <AdPlaceholder className="h-16" />}
               
-              <DebtSummary scenarios={scenarios} />
+              <DebtComparisonChart scenarios={scenarios} />
               
               <PaymentSchedule scenarios={scenarios} />
               
