@@ -5,13 +5,10 @@ import DebtInputForm from "@/components/DebtInputForm";
 import DebtComparisonChart from "@/components/DebtComparisonChart";
 import DebtSummary from "@/components/DebtSummary";
 import PaymentSchedule from "@/components/PaymentSchedule";
-import PremiumFeatures from "@/components/PremiumFeatures";
-import AdPlaceholder from "@/components/AdPlaceholder";
 import { CreditCard } from "lucide-react";
 
 const Index = () => {
   const [scenarios, setScenarios] = useState<DebtScenario[]>([]);
-  const [isPremium, setIsPremium] = useState<boolean>(false);
   const [hasCalculated, setHasCalculated] = useState<boolean>(false);
 
   const handleCalculate = (input: DebtInput) => {
@@ -22,11 +19,6 @@ const Index = () => {
     } catch (error) {
       console.error("Calculation error:", error);
     }
-  };
-
-  const handlePurchasePremium = () => {
-    // In a real app, this would process payment
-    setIsPremium(true);
   };
 
   return (
@@ -46,26 +38,12 @@ const Index = () => {
 
       <main className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 gap-6">
-          <PremiumFeatures 
-            isPremium={isPremium} 
-            onPurchasePremium={handlePurchasePremium} 
-          />
-          
-          {!isPremium && <AdPlaceholder className="h-16" />}
-          
           <DebtInputForm onCalculate={handleCalculate} />
-          
           {hasCalculated && (
             <>
               <DebtSummary scenarios={scenarios} />
-              
-              {!isPremium && <AdPlaceholder className="h-16" />}
-              
               <DebtComparisonChart scenarios={scenarios} />
-              
               <PaymentSchedule scenarios={scenarios} />
-              
-              {!isPremium && <AdPlaceholder className="h-16" />}
             </>
           )}
         </div>
@@ -83,3 +61,4 @@ const Index = () => {
 };
 
 export default Index;
+
